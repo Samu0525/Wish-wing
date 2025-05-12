@@ -1,0 +1,24 @@
+{
+  "name": "pbl",
+  "version": "1.0.0",
+  "main": "email.js",
+  "scripts": {
+    "start": "node email.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.2",
+    "mysql2": "^3.14.0",
+    "nodemailer": "^6.10.0",
+    "puppeteer": "^24.4.0",
+    "xlsx": "^0.18.5"
+  }
+}

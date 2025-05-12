@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login Page with Logo</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://imgur.com/4pfjuW7.jpeg");
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 221, 0, 0.158);
+      z-index: 0;
+    }
+
+    .login-container {
+      width: 90%;
+      max-width: 400px;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.4), 0px 0px 15px rgba(0, 0, 0, 0.2);
+      color: #0072ff;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .login-container img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 50%;
+    }
+
+    .login-container h2 {
+      margin: 0;
+      color: #00c6ff;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #bbb;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00c6ff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #0072ff;
+    }
+
+    .forgot-password {
+      display: block;
+      margin-top: 12px;
+      color: #9c1aff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+
+    .error-message {
+      color: red;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    /* ✅ Media query for smaller screens */
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .login-container h2 {
+        font-size: 20px;
+      }
+
+      .login-container input,
+      .login-container button {
+        font-size: 14px;
+        padding: 10px;
+      }
+
+      .forgot-password {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="background"></div>
+
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <p id="error-message" class="error-message" style="display: none;">
+        Incorrect username or passcode. Please try again.
+      </p>
+    </form>
+    <a href="#" class="forgot-password">Forgot Password?</a>
+  </div>
+
+  <script>
+    const credentials = {
+      username: "Wishwing",
+      passcode: "12345"
+    };
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const enteredUsername = document.getElementById("username").value;
+      const enteredPassword = document.getElementById("password").value;
+
+      if (enteredUsername === credentials.username && enteredPassword === credentials.passcode) {
+        alert("Login successful! Redirecting...");
+        window.location.href = "demon (6).html";
+      } else {
+        document.getElementById("error-message").style.display = "block";
+      }
+    });
+  </script>
+</body>
+</html>
